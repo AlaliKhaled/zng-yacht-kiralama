@@ -3,158 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZNG Yacht Kiralama | Exclusive Bosphorus</title>
+  <title>ZNG Yacht Kiralama | İstanbul Bosphorus</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; }
-    .luxury-font { font-family: 'Playfair Display', serif; }
-    .hero-gradient { background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('https://images.pexels.com/photos/1632361/pexels-photo-1632361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover; }
-    .gold-accent { color: #bf953f; }
-    .bg-gold { background: linear-gradient(135deg, #bf953f, #aa771c); }
-    .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    h1, h2, h3, .luxury-text { font-family: 'Playfair Display', serif; }
+    .gold-text { background: linear-gradient(135deg, #bf953f, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-bg { background: linear-gradient(to bottom, rgba(15,23,42,0.7), rgba(15,23,42,0.9)), url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1920&q=80') center/cover fixed; }
+    .yacht-card { transition: all 0.4s ease; }
+    .yacht-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .custom-input { width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; outline: none; transition: border-color 0.3s; }
+    .custom-input:focus { border-color: #bf953f; box-shadow: 0 0 0 3px rgba(191,149,63,0.1); }
+    .package-radio:checked + label { border-color: #bf953f; background-color: #fffbeb; }
+    .package-radio:checked + label .radio-circle { border-color: #bf953f; background-color: #bf953f; }
   </style>
 </head>
-<body class="text-slate-900">
+<body class="text-slate-800 antialiased">
 
-  <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 px-6 flex justify-between items-center">
-    <div class="text-2xl font-bold luxury-font tracking-tighter italic">ZNG <span class="gold-accent">Yacht</span></div>
-    <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-      <a href="#fleet" class="hover:text-[#bf953f] transition">Filomuz</a>
-      <a href="https://wa.me/905327243104" class="hover:text-[#bf953f] transition">İletişim</a>
-    </div>
-    <a href="https://wa.me/905327243104" class="bg-gold text-white px-5 py-2 rounded-full text-xs font-bold uppercase">Hemen Arayın</a>
-  </nav>
-
-  <header class="hero-gradient h-[80vh] flex items-center justify-center text-center px-4">
-    <div class="max-w-4xl mt-16">
-      <h1 class="text-white text-5xl md:text-7xl font-bold luxury-font mb-6 leading-tight">Boğaz'da <br><span class="gold-accent">Lüks Bir Deneyim</span></h1>
-      <p class="text-slate-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">ZNG Yacht Kiralama ile İstanbul'un tadını en özel şekilde çıkarın.</p>
-      <a href="#fleet" class="bg-gold text-white px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:opacity-90 transition">Yatlarımızı İnceleyin</a>
+  <header class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white luxury-text tracking-widest uppercase">
+        ZNG <span class="text-[#bf953f]">Yacht</span>
+      </h1>
+      <a href="https://wa.me/905327243104" target="_blank" class="hidden md:flex items-center gap-2 text-white hover:text-[#bf953f] transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp İletişim
+      </a>
     </div>
   </header>
 
-  <section id="fleet" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold luxury-font mb-4">Özel Yat Filomuz</h2>
-      <div class="h-1 w-20 bg-gold mx-auto"></div>
+  <section class="hero-bg min-h-screen flex items-center justify-center px-6 relative">
+    <div class="text-center z-10 max-w-3xl mt-20">
+      <p class="text-[#bf953f] tracking-[0.3em] uppercase text-sm font-semibold mb-4">ZNG Yacht Kiralama</p>
+      <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 luxury-text leading-tight drop-shadow-lg">İstanbul'u <br><i class="font-light">Zirvede</i> Yaşayın</h2>
+      <button onclick="document.getElementById('fleet').scrollIntoView()" class="bg-gradient-to-r from-[#bf953f] to-[#aa771c] text-white px-10 py-4 rounded-sm font-bold uppercase tracking-wider hover:scale-105 transition-transform">
+        Filomuzu İnceleyin
+      </button>
     </div>
-
-    <div id="yacht-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      </div>
   </section>
 
-  <div id="bookingModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl transition-all scale-95 opacity-0" id="modalContent">
-      <div class="bg-slate-900 p-6 text-white flex justify-between items-center">
-        <h3 id="targetYacht" class="text-xl luxury-font font-bold uppercase tracking-tight">Yat Rezervasyonu</h3>
-        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
+  <section id="fleet" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h3 class="text-4xl font-bold text-slate-900 luxury-text mb-4">Lüks Yat Filomuz</h3>
+        <div class="h-1 w-24 bg-[#bf953f] mx-auto"></div>
       </div>
-      <div class="p-8 space-y-5">
-        <div class="grid grid-cols-2 gap-4">
+      <div id="yachts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        </div>
+    </div>
+  </section>
+
+  <div id="modal-overlay" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[60] hidden opacity-0 flex items-center justify-center p-4 overflow-y-auto transition-opacity duration-300">
+    <div id="modal-content" class="bg-white w-full max-w-2xl rounded-xl shadow-2xl scale-95 transition-transform duration-300 my-8">
+      
+      <div class="bg-slate-900 p-6 flex justify-between items-center rounded-t-xl">
+        <div>
+          <p class="text-xs font-bold text-[#bf953f] uppercase tracking-widest">Rezervasyon Detayları</p>
+          <h3 id="modal-yacht-name" class="text-2xl luxury-text text-white font-bold mt-1">Yacht Name</h3>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white transition">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div class="p-6 md:p-8 overflow-y-auto max-h-[70vh]">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Tarih</label>
-            <input type="date" id="resDate" class="w-full border border-slate-200 p-3 rounded-lg focus:ring-2 ring-gold/20 outline-none">
+            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Tarih <span class="text-red-500">*</span></label>
+            <input type="date" id="book-date" class="custom-input" required>
           </div>
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Saat</label>
-            <input type="time" id="resTime" class="w-full border border-slate-200 p-3 rounded-lg focus:ring-2 ring-gold/20 outline-none">
+            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Saat <span class="text-red-500">*</span></label>
+            <input type="time" id="book-time" class="custom-input" required>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-2">Kişi Sayısı <span class="text-red-500">*</span></label>
+            <select id="book-guests" class="custom-input">
+              <option value="1-5 Kişi">1 - 5 Kişi</option>
+              <option value="6-10 Kişi">6 - 10 Kişi</option>
+              <option value="11-20 Kişi">11 - 20 Kişi</option>
+              <option value="20+ Kişi">20+ Kişi</option>
+            </select>
           </div>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Kişi Sayısı</label>
-          <select id="resGuests" class="w-full border border-slate-200 p-3 rounded-lg">
-            <option value="1-5 Kişi">1 - 5 Kişi</option>
-            <option value="6-12 Kişi">6 - 12 Kişi</option>
-            <option value="12-20 Kişi">12 - 20 Kişi</option>
-            <option value="20+ Kişi">20+ Kişi</option>
-          </select>
+
+        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-3">Tur Süresi <span class="text-red-500">*</span></label>
+        <div class="space-y-3 mb-8">
+          <div class="relative">
+            <input type="radio" name="duration" id="dur-2" value="2 Saatlik Kısa Tur" class="peer package-radio sr-only" checked>
+            <label for="dur-2" class="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer">
+              <div class="radio-circle w-5 h-5 rounded-full border-2 border-slate-300 mr-4"></div>
+              <div><h4 class="font-bold text-slate-900">2 Saatlik Tur</h4><p class="text-xs text-slate-500">Kısa Boğaz turu ve fotoğraf molası.</p></div>
+            </label>
+          </div>
+          <div class="relative">
+            <input type="radio" name="duration" id="dur-4" value="4 Saatlik Standart Tur" class="peer package-radio sr-only">
+            <label for="dur-4" class="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer">
+              <div class="radio-circle w-5 h-5 rounded-full border-2 border-slate-300 mr-4"></div>
+              <div><h4 class="font-bold text-slate-900">4 Saatlik Tur</h4><p class="text-xs text-slate-500">Yemekli organizasyonlar için ideal.</p></div>
+            </label>
+          </div>
+          <div class="relative">
+            <input type="radio" name="duration" id="dur-8" value="8 Saatlik Tam Gün Turu" class="peer package-radio sr-only">
+            <label for="dur-8" class="flex items-center p-4 border border-slate-200 rounded-lg cursor-pointer">
+              <div class="radio-circle w-5 h-5 rounded-full border-2 border-slate-300 mr-4"></div>
+              <div><h4 class="font-bold text-slate-900">8 Saatlik Gün Boyu</h4><p class="text-xs text-slate-500">Adalar turu ve yüzme molalı tam gün.</p></div>
+            </label>
+          </div>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Tur Süresi</label>
-          <select id="resDuration" class="w-full border border-slate-200 p-3 rounded-lg">
-            <option value="2 Saatlik Tur">2 Saat</option>
-            <option value="4 Saatlik Tur">4 Saat</option>
-            <option value="8 Saatlik Günlük">8 Saat (Tam Gün)</option>
-          </select>
+
+        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-3">Ekstra Hizmetler (İsteğe Bağlı)</label>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+          <label class="flex items-center gap-3 p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" value="Akşam Yemeği Menüsü" class="extra-service w-4 h-4 text-[#bf953f] accent-[#bf953f]">
+            <span class="text-sm font-medium text-slate-700">🍽️ Akşam Yemeği Menüsü</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" value="Canlı Müzik / Keman" class="extra-service w-4 h-4 text-[#bf953f] accent-[#bf953f]">
+            <span class="text-sm font-medium text-slate-700">🎻 Canlı Müzik (Keman)</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" value="Profesyonel Fotoğrafçı" class="extra-service w-4 h-4 text-[#bf953f] accent-[#bf953f]">
+            <span class="text-sm font-medium text-slate-700">📸 Profesyonel Fotoğrafçı</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 border border-slate-100 rounded-lg hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" value="Romantik Süsleme" class="extra-service w-4 h-4 text-[#bf953f] accent-[#bf953f]">
+            <span class="text-sm font-medium text-slate-700">🌹 Romantik Süsleme</span>
+          </label>
         </div>
-        <div class="pt-4">
-          <button onclick="confirmBooking()" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 uppercase tracking-widest">WhatsApp ile Onayla</button>
-        </div>
+
+        <button onclick="sendToWhatsApp()" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#1da851] transition shadow-[0_4px_15px_rgba(37,211,102,0.3)]">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Müsaitlik ve Fiyat Sor (WhatsApp)
+        </button>
       </div>
     </div>
   </div>
 
-  <footer class="bg-slate-900 text-white py-12 text-center">
-    <div class="luxury-font text-2xl italic mb-4 font-bold">ZNG <span class="gold-accent">Yacht</span></div>
-    <p class="text-slate-500 text-sm">© 2026 ZNG Yacht Kiralama. Tüm hakları saklıdır.</p>
-  </footer>
-
   <script>
+    const whatsappNumber = "905327243104";
+    let selectedYachtName = "";
+
+    // Set minimum date to today
+    const dateInput = document.getElementById('book-date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+
     const yachts = [
-      { name: "ZNG Majesty", cap: "15 Kişi", price: "2500", img: "https://images.pexels.com/photos/1632361/pexels-photo-1632361.jpeg?auto=compress&cs=tinysrgb&w=800" },
-      { name: "Pearl of Bosphorus", cap: "12 Kişi", price: "2000", img: "https://images.pexels.com/photos/4092147/pexels-photo-4092147.jpeg?auto=compress&cs=tinysrgb&w=800" },
-      { name: "Golden Night", cap: "20 Kişi", price: "3500", img: "https://images.pexels.com/photos/1126721/pexels-photo-1126721.jpeg?auto=compress&cs=tinysrgb&w=800" },
-      { name: "Ottoman Spirit", cap: "8 Kişi", price: "1800", img: "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=800" },
-      { name: "Silver Sky", cap: "10 Kişi", price: "2200", img: "https://images.pexels.com/photos/9331002/pexels-photo-9331002.jpeg?auto=compress&cs=tinysrgb&w=800" },
-      { name: "Blue Diamond", cap: "6 Kişi", price: "1500", img: "https://images.pexels.com/photos/14840833/pexels-photo-14840833.jpeg?auto=compress&cs=tinysrgb&w=800" }
+      { name: "ZNG Majesty", capacity: "Kapasite: 15 Kişi", img: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80", type: "Mega Yacht" },
+      { name: "Bosphorus Pearl", capacity: "Kapasite: 12 Kişi", img: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=800&q=80", type: "VIP Motor Yacht" },
+      { name: "Golden Horn", capacity: "Kapasite: 20 Kişi", img: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=800&q=80", type: "Party Yacht" },
+      { name: "Ottoman Dream", capacity: "Kapasite: 8 Kişi", img: "https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&w=800&q=80", type: "Luxury Cruiser" },
+      { name: "ZNG Signature", capacity: "Kapasite: 10 Kişi", img: "https://images.unsplash.com/photo-1621277226006-21f47690623a?auto=format&fit=crop&w=800&q=80", type: "Premium VIP" },
+      { name: "Aegean Breeze", capacity: "Kapasite: 6 Kişi", img: "https://images.unsplash.com/photo-1534080186523-28d8cb530a6b?auto=format&fit=crop&w=800&q=80", type: "Sailing Yacht" }
     ];
 
-    const container = document.getElementById('yacht-container');
-    let activeYacht = "";
-
-    yachts.forEach(y => {
-      container.innerHTML += `
-        <div class="bg-white rounded-xl border border-slate-100 overflow-hidden card-hover group shadow-sm">
+    const grid = document.getElementById('yachts-grid');
+    yachts.forEach((yacht) => {
+      grid.innerHTML += `
+        <div class="yacht-card bg-white rounded-xl overflow-hidden border border-slate-100 group">
           <div class="relative h-64 overflow-hidden">
-            <img src="${y.img}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute top-4 left-4 bg-slate-900/80 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded">VIP SELECTION</div>
+            <img src="${yacht.img}" alt="${yacht.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">${yacht.type}</div>
           </div>
           <div class="p-6">
-            <div class="flex justify-between items-start mb-2">
-               <h3 class="text-xl font-bold luxury-font">${y.name}</h3>
-               <span class="text-gold-accent font-bold text-sm">€${y.price}<span class="text-[10px] text-slate-400 font-normal">/saat</span></span>
-            </div>
-            <p class="text-slate-500 text-xs mb-6 flex items-center gap-2 uppercase tracking-wider">
-               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-               ${y.cap}
+            <h4 class="text-2xl font-bold text-slate-900 luxury-text mb-2">${yacht.name}</h4>
+            <p class="text-slate-500 text-sm flex items-center gap-2 mb-6">
+              <svg class="w-4 h-4 text-[#bf953f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              ${yacht.capacity}
             </p>
-            <button onclick="openModal('${y.name}')" class="w-full bg-slate-900 text-white py-3 font-bold uppercase tracking-widest text-[11px] hover:bg-gold-accent transition-colors rounded-lg">Rezervasyon Yap</button>
+            <button onclick="openModal('${yacht.name}')" class="w-full bg-slate-900 text-white py-3 font-semibold uppercase tracking-wider text-sm hover:bg-[#bf953f] transition-colors rounded">Rezervasyon Yap</button>
           </div>
         </div>
       `;
     });
 
-    const modal = document.getElementById('bookingModal');
-    const content = document.getElementById('modalContent');
+    const overlay = document.getElementById('modal-overlay');
+    const content = document.getElementById('modal-content');
 
     function openModal(name) {
-      activeYacht = name;
-      document.getElementById('targetYacht').innerText = name;
-      modal.classList.replace('hidden', 'flex');
-      setTimeout(() => { 
-        content.classList.replace('scale-95', 'scale-100'); 
-        content.classList.replace('opacity-0', 'opacity-100'); 
-      }, 10);
+      selectedYachtName = name;
+      document.getElementById('modal-yacht-name').innerText = name;
+      overlay.classList.remove('hidden');
+      setTimeout(() => { overlay.classList.remove('opacity-0'); content.classList.remove('scale-95'); }, 10);
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     function closeModal() {
-      content.classList.replace('scale-100', 'scale-95'); 
-      content.classList.replace('opacity-100', 'opacity-0');
-      setTimeout(() => modal.classList.replace('flex', 'hidden'), 200);
+      overlay.classList.add('opacity-0');
+      content.classList.add('scale-95');
+      setTimeout(() => { overlay.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
     }
 
-    function confirmBooking() {
-      const date = document.getElementById('resDate').value;
-      const time = document.getElementById('resTime').value;
-      const guests = document.getElementById('resGuests').value;
-      const dur = document.getElementById('resDuration').value;
+    function sendToWhatsApp() {
+      const date = document.getElementById('book-date').value;
+      const time = document.getElementById('book-time').value;
+      const guests = document.getElementById('book-guests').value;
+      const duration = document.querySelector('input[name="duration"]:checked').value;
       
-      if(!date || !time) return alert("Lütfen tarih ve saat seçin.");
+      if(!date || !time) {
+        alert("Lütfen tarih ve saat seçiniz. (الرجاء اختيار التاريخ والوقت)");
+        return;
+      }
 
-      const msg = `Merhaba ZNG Yacht Rental! 🛥️\n\n*Yat Rezervasyon Talebi:*\n--------------------------\n📍 *Yat:* ${activeYacht}\n📅 *Tarih:* ${date}\n⏰ *Saat:* ${time}\n⏳ *Süre:* ${dur}\n👥 *Kişi:* ${guests}\n\nMüsaitlik durumu hakkında bilgi alabilir miyim?`;
-      window.open(`https://wa.me/905327243104?text=${encodeURIComponent(msg)}`, '_blank');
+      // Collect Extras
+      const checkboxes = document.querySelectorAll('.extra-service:checked');
+      let extras = [];
+      checkboxes.forEach((cb) => extras.push(cb.value));
+      const extrasText = extras.length > 0 ? extras.join(", ") : "İstenmedi (لا يوجد)";
+
+      const text = `Merhaba ZNG Yacht Kiralama! 🛥️\n\nYeni bir rezervasyon talebim var:\n\n▪ *Yat Seçimi:* ${selectedYachtName}\n▪ *Tarih:* ${date}\n▪ *Saat:* ${time}\n▪ *Süre:* ${duration}\n▪ *Kişi Sayısı:* ${guests}\n▪ *Ekstralar:* ${extrasText}\n\nBu tarihler için müsaitlik ve fiyat bilgisi alabilir miyim?`;
+      
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
       closeModal();
     }
   </script>
